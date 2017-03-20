@@ -1,0 +1,72 @@
+html{
+    margin: 70px;
+    background-image: url("book.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#myDates{
+    font-style: oblique;
+}
+
+h1{
+    font-size: 100px;
+    text-align: center;
+    font-style: oblique;
+    background-color: burlywood;
+    border-radius: 5px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    height: 60px;
+}
+
+tr, th {
+    border: 5px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 8px;
+}
+#dateInput{
+    padding: 2%;
+    margin: 85px;
+    font-weight: bolder;
+}
+
+input:focus {
+    background-color: gray;
+}
+
+.mystyle{
+    background-color: blue;
+}
+.date1{
+    background-color: green;
+}
+
+.date{
+    background-color: red;
+}
+
+#firstdate{
+    color: blue;
+}
+
+#seconddate{
+    color: red;
+}
+
+.myStyle{
+    background-color: green;
+}
+
+.mydate1{
+    background-color: blue;
+}
+
+.mydate2{
+    background-color: red;
+}
