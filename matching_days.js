@@ -1,41 +1,55 @@
-var date1 = document.getElementById("firstdate");
-var date2 = document.getElementById("seconddate");
+var date1 = document.getElementById("firstMatchingDate");
+var date2 = document.getElementById("secondMatchingDate");
 
-document.getElementById("firstdate").addEventListener("change", myFunction);
-document.getElementById("seconddate").addEventListener("change", myFunction);
+document.getElementById("firstMatchingDate").addEventListener("change", matchDays);
+document.getElementById("secondMatchingDate").addEventListener("change", matchDays);
 
 var day = document.querySelectorAll(".day");
 
-function myFunction() {
-  for (var i=0; i<day.length; i++){
+function matchDays() {
 
+  // to loop through the days
+  for (var i=0; i < day.length; i++){
 
-        var newDate1 = newDate1 (date1.value);
-        var whichDay1 = newDate1.getDay();
+    day[i].classList.remove("mydate1");
+    day[i].classList.remove("mydate2");
+    day[i].classList.remove("matchDay");
 
-        var newDate2 = newDate2 (date2.value);
-        var whichDay2 = newDate2.getDay();
+  if(date1.value !== null) {
+        var newDate1 = new Date (date1.value); // convert input date to js date
+        var matchingDag1 = newDate1.getDay(); // to get the value of the day
+  }else{
+    var matchingDag1 = null;
+  }
 
-        day[i].classList.remove("mydate1");
-        day[i].clsssList.remove("mydate2");
-        day[i].classList.remove("myStyle");
+   if(date2.value !== null) {
+        var newDate2 = new Date (date2.value);
+        var matchingDag2 = newDate2.getDay();
+} else{
+  var matchingDag2 = null;
+}
 
-        if(whichDay1 === whichDay2) {
-            day[whichDay1].classlist.add("mystyle");
+//If matchingDag1 is equal to matchingDag2 and or matchingDag1 is not undefined and or matchingDag2 is not undefined
 
-        } else if(whichDay2 == NaN) {
-            day[whichDay1].classList.add("mydate1");
+        if(matchingDag1 === matchingDag2 && matchingDag1 !== null && matchingDag2 !== null) {
+            day[matchingDag1].classList.add("matchDay");
 
-        } else if(whichDay1 == NaN) {
-            day[whichday2].classList.add("mydate2");
-        } else {
-           day[whichDay1].classList.add("mydate1");
-           day[whichday2].classList.add("mydate2");
+// else if matchingDag1 is not undefined and or matchingDag2 is not undefined and or  matchingDag1 is not equal to matchingDag2
+
+        } else if(matchingDag1 !== null && matchingDag2 !== null && matchingDag1 !== matchingDag2) {
+            day[matchingDag1].classList.add("mydate1");
+            day[matchingDag2].classList.add("mydate2");
+
+//else if matchingDag1 is not undefined and or matchingDag1 is not equal to matchingDag2 and or matchingDag2 is not undefined
+
+        } else if(matchingDag1 !== null && matchingDag1 !== matchingDag2 && matchingDag2 === null)  {
+            day[matchingDag1].classList.add("mydate1");
+        } else if(matchingDag2 !== null && matchingDag1 !== matchingDag2 && matchingDag1 === null){
+           //day[whichDay1].classList.add("mydate1");
+           day[matchingDag2].classList.add("mydate2");
 
 
         }
-
-
 
     }
 }

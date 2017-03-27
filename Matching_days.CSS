@@ -1,8 +1,63 @@
 html{
+   margin: 70px;
+  background-image: url("clouds.png");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+
+body{
     margin: 70px;
-    background-image: url("book.jpg");
+
+    background-image: url("clouds.png");
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: fixed;;
+    -webkit-animation: animate_background 30s linear  infinite;
+    -moz-animation: animate_background 30s linear infinite;
+    -o-animation: animate_background 30s linear  infinite;
+    animation: animate_background 30s linear infinite;
+
+}
+
+@-webkit-keyframes animate_background {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 -200px;
+    }
+}
+@-moz-keyframes animate_background {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 -200px;
+    }
+}
+@-o-keyframes animate_background {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 -200px;
+    }
+}
+@keyframes animate_background {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 -200px;
+    }
+}
+
+html:hover {
+  background-image:url("clouds.png");
 }
 
 #myDates{
@@ -40,26 +95,26 @@ input:focus {
     background-color: gray;
 }
 
-.mystyle{
+.matchDay{
     background-color: blue;
 }
-.date1{
+.firstdate{
     background-color: green;
 }
 
-.date{
+.seconddate{
     background-color: red;
 }
 
-#firstdate{
+#firstMatchingDate{
     color: blue;
 }
 
-#seconddate{
+#secondMatchingDate{
     color: red;
 }
 
-.myStyle{
+.matchDay{
     background-color: green;
 }
 
